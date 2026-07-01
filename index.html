@@ -545,6 +545,33 @@
   </div>
 </footer>
 
+<div id="roleModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#161616; padding:24px; border-radius:12px; max-width:380px; width:90%; color:#fff;">
+    <h3 style="margin-top:0;">One last thing</h3>
+    <p class="muted small">Tell us who you are so we can set up your account correctly.</p>
+    <form id="roleForm" class="form">
+      <label>I am signing up as
+        <select id="rmRole">
+          <option value="user">Regular buyer</option>
+          <option value="restaurant">Restaurant / shop</option>
+          <option value="ngo">NGO</option>
+        </select>
+      </label>
+      <label>Phone
+        <input type="tel" id="rmPhone" required placeholder="10-digit mobile number">
+      </label>
+      <label id="rmRegWrap" hidden>NGO registration number
+        <input type="text" id="rmReg" placeholder="e.g. KL/NGO/2019/0451">
+      </label>
+      <label id="rmAddressWrap" hidden>Restaurant / shop address
+        <input type="text" id="rmAddress" placeholder="Shop address">
+      </label>
+      <p class="form__error" id="rmError"></p>
+      <button class="btn btn--primary btn--block" type="submit">Continue</button>
+    </form>
+  </div>
+</div>
+  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
