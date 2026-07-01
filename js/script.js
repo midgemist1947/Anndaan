@@ -1192,5 +1192,27 @@
     setInterval(tick, 1000);
   }
 
+
+   db.auth.onAuthStateChange(async (event, session) => {
+
+  if (!session?.user) return;
+
+  const user = await loadUserFromSupabase(session.user.id);
+
+  if (!user) return;
+
+  const users = store.get(DB_USERS, []).filter(u => u.id !== user.id);
+  users.push(user);
+  store.set(DB_USERS, users);
+
+  setSession(user.id);
+
+  refreshAuthUI();
+  renderNotifications();
+
+  navigateTo("dashboard");
+
+});
+   
   document.addEventListener("DOMContentLoaded", init);
 })();
