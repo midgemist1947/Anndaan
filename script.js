@@ -7,9 +7,7 @@
 /* ---------------------------------------------------------------------
    1) CONFIG — API keys + endpoints
    --------------------------------------------------------------------- */
-const GROQ_API_KEY      = "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";
-const GROQ_API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
-const GROQ_MODEL        = "llama-3.3-70b-versatile";
+
 
 // ⚠️  Add your live Razorpay Key ID here when you're ready to accept payments.
 // Get it from: https://dashboard.razorpay.com/app/keys
